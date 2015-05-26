@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	//"strings"
+	"strings"
 )
 
 func main() {
@@ -13,11 +13,21 @@ func main() {
 		return
 	}
 
-	fileContents := string(data)
-	fmt.Println(fileContents)
+	//fileContents := string(data)
+	//fmt.Println(fileContents)
 
-	//lines := strings.Split(string(data), "\n")
-	//for _, line := range lines {
-	//	fmt.Println(line)
-	//}
+	//dudeLines := make([]string, 0)
+	//walterLines := make([]string, 0)
+	//donnyLines := make([]string, 0)
+	//theStrangerLines := make([]string, 0)
+
+	lines := strings.Split(string(data), "\n")
+	for i, line := range lines {
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
+		}
+
+		fmt.Println("#", i, " ", line)
+	}
 }
